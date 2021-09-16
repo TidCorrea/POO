@@ -1,0 +1,27 @@
+package POO;
+import java.util.Scanner;
+public class Principal {
+ 
+    public static void main(String[] args) {
+    	
+    	Ponto P1 = new Ponto();
+    	Ponto P2 = new Ponto();
+    	
+    	int dis,calcA, calcB;
+    	try (Scanner leitor = new Scanner(System.in)) {
+System.out.println("Digite o valor de X e Y do primeiro ponto: ");
+P1.setX(leitor.nextInt()); P1.setY(leitor.nextInt());		
+System.out.println("Digite o valor de X e Y do segundo ponto: ");
+P2.setX(leitor.nextInt()); P2.setY(leitor.nextInt());
+}
+    	calcA = ((int) Math.pow(P2.getX() - P1.getX(), 2));
+    	calcB = ((int) Math.pow(P2.getY() - P1.getY(), 2));
+    	
+    	dis = (int) Math.sqrt(calcA + calcB);
+    	
+    	if(P1.igual(P2))
+    		System.out.println("Os dois pontos são iguais e a distância entre eles é " + dis);
+else    	
+System.out.println("A distância entre os pontos é de: " + dis);
+}
+}
